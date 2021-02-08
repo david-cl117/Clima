@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Administrador</title>
+
+        <!--Referencia al archivo css-->
+        <link rel="stylesheet" href="css/inicioP.css">
+
+         <!--Archivo JavaScript-->
+         <script src="JS/inicioAd.js"></script>
+         <script src="JS/groupAd.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body onload="cargar()">
+        <!--Seccion de datos-->
+        <section class="datos">
+                <!--Imagen logo de clima-->
+                <img src="images/inicioP/logo.png" alt="logo_clima">
+    
+                <h3 id="nombre">Terapeuta:</h3>
+                
+                <form action="/Clima/php/logout.php">
+                    <input type="submit" class="logout" id="sesion" value="Cerrar sesión">
+                </form>    
+                
+                <button class="settings" onclick="abrirPop()" id="conf"><i class="fa fa-cog"></i></button>
+        </section>
+
+        <!--Contenedor transparente-->
+        <section class="transp" id="transparente">
+                <h2 class="ob" id="titulo">GRUPO</h2>    
+
+                <div class="group" id="group">
+
+                </div>   
+
+                <button class="add" id="AddAl" onclick="abrirPopA()">Agregar Alumno</button>
+        </section>
+
+        <!--POP-UP para cambiar contraseña-->
+        <div class="backPop" id="popup">
+            <div class="popup" id="cambiar">
+                <h2>Cambiar contraseña</h2>
+                <button class="salir" onclick="cerrarPop()"><i class="fa fa-window-close"></i></button>
+
+                <h4 class="actual">Contraseña actual:</h4>
+                <input type="password" class="PActual" id="PActual">
+
+                <h4 class="nueva">Nueva contraseña:</h4>
+                <input type="password" class="PNueva" id="PNueva">
+
+                <h4 class="nueva2">Repetir nueva contraseña:</h4>
+                <input type="password" class="PNueva2" id="PNueva2">
+
+                <button class="cambiar" onclick="cambiarC()">Cambiar contraseña</button>
+            </div>
+        </div>
+
+        <!--POP-UP para agregar alumno-->
+        <div class="backPop" id="popupA">
+            <div class="popupA" id="agregaA">
+                <h2>Agregar alumno</h2>
+                <button class="salir" onclick="cerrarPopA()"><i class="fa fa-window-close"></i></button>
+
+                <h4>Nombre:</h4>
+                <input type="text" id="textName">
+
+                <h4>Apellido Paterno:</h4>
+                <input type="text" id="textPat">
+
+                <h4>Apellido Materno:</h4>
+                <input type="text" id="textMat">
+
+                <h4>Fecha de Nacimiento:</h4>
+                <input type="text" id="textDate" placeholder="DD-MM-AAAA">
+
+                <h4>N&uacute;mero de centavos:</h4>
+                <input type="text" id="cents">
+
+                <button class="cambiar" onclick="agregarA()">Agregar Alumno</button>
+            </div>
+        </div>
+
+        <!--POP-UP para eliminar alumno-->
+        <div class="backPop" id="popupDA">
+            <div class="popup" id="elmA">
+                <h2>Dar de baja alumno</h2>
+                <button class="salir" onclick="cerrarPopDA()"><i class="fa fa-window-close"></i></button>
+                
+                <button class="cambiar" onclick="eliminarAl()">Dar de baja alumno</button>
+                
+            </div>
+        </div>
+
+        <!--POP-UP para agregar terapeuta-->
+        <div class="backPop" id="popupTer">
+            <div class="popupA" id="agregaTer">
+                <h2>Registrar Terapeuta</h2>
+                <button class="salir" onclick="cerrarPopAT()"><i class="fa fa-window-close"></i></button>
+
+                <h4>Nombre:</h4>
+                <input type="text" id="NameTer">
+
+                <h4>Apellido Paterno:</h4>
+                <input type="text" id="PaternoT">
+
+                <h4>Apellido Materno:</h4>
+                <input type="text" id="MaternoT">
+
+                <h4>Fecha de Nacimiento:</h4>
+                <input type="text" id="fechaTer" placeholder="DD-MM-AAAA">
+
+                <button class="cambiar" onclick="agregarTer()">Registrar Terapeuta</button>
+            </div>
+        </div>
+
+        <!--POP-UP para mover alumno-->
+        <div class="backPop" id="popupMA">
+            <div class="popup" id="moveA">
+                <h2>Mover alumno</h2>
+                <button class="salir" onclick="cerrarPopMover()"><i class="fa fa-window-close"></i></button>
+                <h4>Elije el grupo donde deseas mover al alumno:</h4>
+                <select class="lista_U" id="gru" name="Grupo" required>
+                    <option value="" disabled selected hidden>Elegir Grupo</option>
+                </select>
+                <button class="cambiar" onclick="moverAl()">Mover Alumno</button>
+                
+            </div>
+        </div>
+        
+    </body>
+
+</html>

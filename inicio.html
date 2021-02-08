@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Inicio Clima</title>
+
+        <!--Referencia al archivo css-->
+        <link rel="stylesheet" href="css/inicio.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <body>   
+        <main>
+            <div class="contenedor">
+                <!--Logo de Clima-->
+                <div class="logo">
+                    <img src="/Clima/images/inicio/logo clima.png" alt="logo_clima">
+                </div>
+
+                <!--Campos para nombre de usuario, contraseña y boton de login-->
+                <div class="sesion">
+    
+                    <!--Lista para elegir tipo de usuario-->
+                    <select class="lista_U" id="tipo" name="tipoU" required>
+                        <option value="" disabled selected hidden>Elegir Tipo de Usuario</option>
+                        <option value="Admin">Administrador</option>
+                        <option value="Padre">Padre o Tutor</option>
+                        <option value="Ter">Terapeuta</option>
+                    </select>
+
+                    <br><input type="text" id="user" name="usr" placeholder="USUARIO"> <br>
+                    <input type="password" id="pass" name="pss" placeholder="CONTRASEÑA"> <br> 
+                    <br>
+                    <button class="login" id="login" type="button" onclick="pag()">LOGIN</button>
+                     
+                </div>
+            </div>
+        </main>
+
+        <!--Archivo JavaScript-->
+        <script src="JS/cualpag.js"></script>
+      
+    </body>
+
+
+    
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Administrador</title>
+
+        <!--Referencia al archivo css-->
+        <link rel="stylesheet" href="css/inicioP.css">
+
+         <!--Archivo JavaScript-->
+         <script src="JS/cualpag.js"></script>
+         <script src="JS/inicioAd.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body onload="cargar()">
+        <!--Seccion de datos del alumno-->
+        <section class="datos">
+                <!--Imagen logo de clima-->
+                <img src="/Clima/images/inicioP/logo.png" alt="logo_clima">
+    
+                <h3 id="nombre">Administrador:</h3>
+                
+                <form action="/Clima/php/logout.php">
+                    <input type="submit" class="logout" id="sesion" value="Cerrar sesión">
+                </form>    
+                
+                <button class="settings" onclick="abrirPop()" id="conf"><i class="fa fa-cog"></i></button>
+        </section>
+
+        <!--Contenedor transparente-->
+        <section class="transp" id="transparente">
+                <h2 class="ob" id="titulo">GRUPOS</h2>    
+
+                <div class="group" id="group">
+
+                </div>   
+
+                <button class="add" onclick="abrirPopG()">Agregar Grupo</button>
+        </section>
+
+        <!--POP-UP para cambiar contraseña-->
+        <div class="backPop" id="popup">
+            <div class="popup" id="cambiar">
+                <h2>Cambiar contraseña</h2>
+                <button class="salir" onclick="cerrarPop()"><i class="fa fa-window-close"></i></button>
+
+                <h4 class="actual">Contraseña actual:</h4>
+                <input type="password" class="PActual" id="PActual">
+
+                <h4 class="nueva">Nueva contraseña:</h4>
+                <input type="password" class="PNueva" id="PNueva">
+
+                <h4 class="nueva2">Repetir nueva contraseña:</h4>
+                <input type="password" class="PNueva2" id="PNueva2">
+
+                <button class="cambiar" onclick="cambiarC()">Cambiar contraseña</button>
+            </div>
+        </div>
+
+        <!--POP-UP para agregar grupos-->
+        <div class="backPop" id="popupG">
+            <div class="popup" id="add">
+                <h2>Agregar Grupo</h2>
+                <button class="salir" onclick="cerrarPopG()"><i class="fa fa-window-close"></i></button>
+
+                <h4 class="actual">Nombre del grupo:</h4>
+                <input type="text" class="grupis" id="grupis">
+
+                <button class="cambiar" onclick="agregaG()">Agregar Grupo</button>
+            </div>
+        </div>
+
+        <!--POP-UP para editar grupos-->
+        <div class="backPop" id="popupEditar">
+            <div class="popup" id="edit">
+                <h2>Editar Grupo</h2>
+                <button class="salir" onclick="cerrarPopEditar()"><i class="fa fa-window-close"></i></button>
+
+                <h4 class="actual">Nuevo nombre del grupo:</h4>
+                <input type="text" class="grupis" id="grupoEditar">
+
+                <button class="cambiar" onclick="Editar()">Editar Grupo</button>
+            </div>
+        </div>
+
+        <!--POP-UP para eliminar grupos-->
+        <div class="backPop" id="popupDelete">
+            <div class="popup" id="elm">
+                <h2>Eliminar grupo</h2>
+                <button class="salir" onclick="cerrarPopDelete()"><i class="fa fa-window-close"></i></button>
+
+                <button class="cambiar" onclick="eliminarG()">Eliminar Grupo</button>
+            </div>
+        </div>
+        
+    </body>
+
+</html>
